@@ -1,0 +1,50 @@
+body {
+	padding: 3% 7%;
+}
+.logo {
+	padding: 0 0 5px;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+.spin {
+    animation: spin 4s infinite linear;
+}
+/*bfed59 ebffbe*/
+.box {
+	border-top: 10px solid #edeb59;
+	box-sizing: border-box;
+	height: auto;
+	padding: 5%;
+	width: 100%;
+}
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+.flex-item {
+	box-sizing: border-box;
+	padding: 1em;
+}
+.flex-item.folder {
+	flex: 0 1 20%;
+}
+.flex-item.bookmark {
+	flex: 0 0 50%;
+	text-decoration: none;
+	word-break: break-all;
+}
+.flex-item:hover {
+	background: #f6f6f6;
+}
+.folder,
+.bookmark {
+	color: #888;
+	font-size: 0.8em;
+}
+.btn.back:before {
+	content: '←';
+	font-size: 1em;
+	text-align: center;
+}

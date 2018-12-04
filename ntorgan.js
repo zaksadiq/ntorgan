@@ -23,7 +23,7 @@ function removeListener(element, eventName, handler) {
 }
 
 function makeIndent(indentLength) {
-	return " = ".repeat(indentLength); //change to span.indent
+	return " 📁	".repeat(indentLength); //change to span.indent
 }
 
 function expandFolder(bookmarkItem) {

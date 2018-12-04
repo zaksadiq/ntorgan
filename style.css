@@ -28,10 +28,10 @@ body {
 	box-sizing: border-box;
 	padding: 1em;
 }
-.flex-item.folder {
+.flex-item {
 	flex: 0 1 20%;
 }
-.flex-item.bookmark {
+.bookmarkview > .flex-item {
 	flex: 0 0 50%;
 	text-decoration: none;
 	word-break: break-all;

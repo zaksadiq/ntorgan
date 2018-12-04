@@ -60,6 +60,10 @@ function drawBackButton() {
 	box.prepend(btn);
 }
 
+function boxAddBookmarkViewClass() {
+	var box = document.querySelector(".box");
+	box.classList += ' bookmarkview';
+}
 function printBookmarkItems(bookmarkItem, indent, printChildren = 0) {
 	if (bookmarkItem.title == ntfolderTitle || printChildren) {
 		clearBox();
@@ -76,8 +80,9 @@ function printBookmarkItems(bookmarkItem, indent, printChildren = 0) {
 			//is bookmark
 			if (folderView) {
 				folderView = 0;
+				boxAddBookmarkViewClass();
 				drawLogo(folderName.toUpperCase());
-				drawBackButton();
+				// drawBackButton();
 			}
 			boxPrint(bookmarkItem, bookmarkItem.title, 0);
 		} else {

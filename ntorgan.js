@@ -27,7 +27,11 @@ function makeIndent(indentLength) {
 }
 
 function expandFolder(bookmarkItem) {
+	folderName = bookmarkItem.title;
+	folderView = 0;
+	boxAddBookmarkViewClass();
 	printBookmarkItems(bookmarkItem, 1, 1);
+	drawLogo(folderName.toUpperCase());
 }
 
 function boxPrint(bookmarkItem, str, isFolder) {
@@ -49,8 +53,10 @@ function boxPrint(bookmarkItem, str, isFolder) {
 
 function clearBox() {
 	var box = document.querySelector(".box");
-	// box.removeChild(box.lastChild());
-	box.innerHTML = '';
+	// box.innerHTML = '';
+	while (box.firstChild) {
+		box.removeChild(box.firstChild);
+	}
 }
 
 function drawBackButton() {
@@ -67,9 +73,6 @@ function boxAddBookmarkViewClass() {
 function printBookmarkItems(bookmarkItem, indent, printChildren = 0) {
 	if (bookmarkItem.title == ntfolderTitle || printChildren) {
 		clearBox();
-		if (bookmarkItem.tile != ntfolderTitle) {
-			folderName = bookmarkItem.title;
-		}
 		if (bookmarkItem.children) {
 			for (child of bookmarkItem.children) {
 				printBookmarkItems(child, indent);
@@ -78,12 +81,7 @@ function printBookmarkItems(bookmarkItem, indent, printChildren = 0) {
 	} else {
 		if (bookmarkItem.url) {
 			//is bookmark
-			if (folderView) {
-				folderView = 0;
-				boxAddBookmarkViewClass();
-				drawLogo(folderName.toUpperCase());
-				// drawBackButton();
-			}
+			// drawBackButton();
 			boxPrint(bookmarkItem, bookmarkItem.title, 0);
 		} else {
 			//is folder
@@ -111,10 +109,10 @@ function onRejected(error) {
 }
 
 function drawLogo(str) {
-	document.querySelector(".logo").innerHTML = str;
+	document.querySelector(".logo").textContent = str;
 }
 
 var ntfolderTitle = "ntorgan";
-var folderView = 1; folderName = 0;
+var folderView = 1; var folderName = 0;
 var searching = browser.bookmarks.search({title:ntfolderTitle});
 searching.then(onSearchFulfilled, onRejected);

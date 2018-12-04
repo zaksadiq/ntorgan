@@ -46,7 +46,7 @@ function boxPrint(bookmarkItem, str, isFolder) {
 	}
 	item.classList = `flex-item ${spanClass} ${bookmarkItem.id}`;
 	// item.innerHTML = `<span class='flex-item ${spanClass}'> ${str} </span>`;
-	item.innerHTML = str;
+	item.textContent = str;
 	box.appendChild(item);
 	addListener(item, 'click', function() { expandFolder(bookmarkItem); });
 }

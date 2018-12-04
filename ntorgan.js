@@ -76,10 +76,10 @@ function printBookmarkItems(bookmarkItem, indent, printChildren = 0) {
 			//is bookmark
 			if (folderView) {
 				folderView = 0;
-				drawLogo(folderName);
+				drawLogo(folderName.toUpperCase());
 				drawBackButton();
 			}
-			boxPrint(bookmarkItem, bookmarkItem.url, 0);
+			boxPrint(bookmarkItem, bookmarkItem.title, 0);
 		} else {
 			//is folder
 			boxPrint(bookmarkItem, makeIndent(indent) + bookmarkItem.title, 1);

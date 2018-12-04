@@ -2,6 +2,7 @@ body {
 	padding: 3% 7%;
 }
 .logo {
+	color: #242424;
 	padding: 0 0 5px;
 }
 @keyframes spin {

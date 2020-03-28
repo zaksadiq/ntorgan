@@ -1,0 +1,21 @@
+{
+
+	"manifest_version": 2,
+	"name": "ntorgan",
+	"version": "0.8",
+
+	"description": "In development. View bookmark folders on the new tab page.",
+  
+	"icons": {
+	  "48": "icons/ntorgan.png"
+	},
+
+	"chrome_url_overrides" : {
+		"newtab": "newtab.html"
+	},
+
+	"permissions": [
+		"bookmarks"
+	]
+
+}
